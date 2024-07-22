@@ -1,0 +1,22 @@
+{{ if .Teaching }}
+<div id="teaching" class="section">
+    <div class="section__heading">
+        <h2 class="section__title">
+            {{ i18n "teaching" }}
+        </h2>
+    </div>
+    <div class="section__content">
+        {{ range .Teaching }}
+            <div class="teaching__item">
+                <h3 class="teaching__title">{{ .Course | safeHTML }}</h3>
+                <h4 class="teaching__place">{{ .Place | safeHTML }}</h4>
+		<div>
+		{{ range .Years }}
+		<li class="teaching__years">{{ . | safeHTML }}</li>
+		{{ end }}
+		</div>
+            </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

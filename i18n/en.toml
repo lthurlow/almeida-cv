@@ -4,8 +4,8 @@ other = "Profile"
 [experience]
 other = "Experience"
 
-[education]
-other = "Education"
+[teaching]
+other = "Teaching"
 
 [references]
 other = "References"
