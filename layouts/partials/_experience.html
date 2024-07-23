@@ -45,3 +45,36 @@
     </div>
 </div>
 {{ end }}
+{{ if .Teaching }}
+<div id="teaching" class="section">
+    <div class="section__heading">
+        <h2 class="section__title">Teaching</h2>
+    </div>
+    <div class="section__content">
+        <div class="experience">
+            {{ range .Teaching }}
+            {{ if .Class }}
+            <div class="teaching__item {{ .Class }}">
+            {{ else }}
+            <div class="teaching__item">
+            {{ end }}
+                <div class="experience__header">
+                    <h3 class="experience__company">
+                        {{ .Course | safeHTML }}
+                    </h3>
+                    <h3 class="experience__place">{{ .Place | safeHTML }}</h3>
+                </div>
+                <div class="teaching__job">
+                    <div class="teaching__subheader">
+                        <h3 class="teaching__position">
+                            {{ .Years | safeHTML}}
+                        </h3>
+                        <h3 class="teaching__date">{{ .Date | safeHTML }}</h3>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
